@@ -37,3 +37,7 @@ def resume(request,id):
     response['Content-Disposition'] ='attachment'
     filename = "resumee.pdf"
     return response
+
+def list(request):
+    profiles = Profile.objects.all()
+    return render(request,'main/list.html',{'profiles':profiles})
